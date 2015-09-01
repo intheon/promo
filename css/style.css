@@ -38,6 +38,7 @@ font-family: 'Noto Sans', sans-serif;
 	color:			#565656;
 	padding:		7%;
 	border-radius:	5px;
+	transition:		all 1s;
 }
 .column .button:hover
 {
@@ -50,4 +51,10 @@ font-family: 'Noto Sans', sans-serif;
 {
 	float:			left;
 	padding:		2%;
+}
+
+#how-much-value
+{
+	float:			left;
+	font-size:		1.3em;
 }
