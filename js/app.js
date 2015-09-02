@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	$("#test").on("input", function(event){
-		var rangeValue = $("#test").val();
+	$("#range-slider").on("input", function(event){
+		var rangeValue = $("#range-slider").val();
 		$("#how-much-value").html(rangeValue)
 	});
 });

@@ -4,27 +4,60 @@
 	<title>generate</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-<link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
-<div class="container">
+<div class="main-container">
 
-	<div class="two grid">
+	<div class="row">
 
-		<div class="column">
+		<div class="column-7">
+
 			<h2 class="">Generate random codes</h2>
 			<p>Need some random codes generating? Perhaps for a list of usernames/passwords or promo codes you wish to give out?</p>
 			<p>Easily generate some now with options, and view in browser, or download to a csv file.</p>
+
 		</div>
 
-		<div class="column">
-			<div class="how-much">
-				<input type="range" id="test" min="1" max="277" step="1" default="50">
-				<div id="how-much-value">50</div>
+		<div class="column-5">
+
+		<!-- params -->
+
+			<div class="row">
+
+				<div class="column-12">
+
+					<div class="how-much">
+						<h4>Choose amount</h4>
+						<div id="how-much-value">50</div>
+						<input type="range" id="range-slider" min="1" max="300" step="1" default="50">
+					</div>
+
+				</div>
+
 			</div>
-			<div class="button">Generate!</div>
+
+			<div class="row">
+
+				<div class="column-6">
+					<div class="view-settings">
+						<form name="output-mode">
+							<h4>Output mode</h4>
+							<input type="radio" name="output" value="web"> This page. 
+							<br />
+							<input type="radio" name="output" value="csv"> As csv.
+						</form>
+					</div>
+				</div>
+
+				<div class="column-6">
+					<input type="button" class="button" value="Generate!">
+				</div>
+
+			</div>
+
 		</div>
 
 	</div>
