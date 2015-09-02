@@ -94,21 +94,25 @@ input[type="range"] {
   width: 98%; }
   input[type="range"]::-webkit-slider-runnable-track {
     -webkit-appearance: none;
-    background-color: #efefef; }
+    background-color: #efefef;
+    border-radius: 6px;
+    padding: 1%; }
   input[type="range"]::-webkit-slider-thumb:before {
     position: absolute;
     top: 0;
-    right: 50%;
-    background: #e00;
-    content: '';
-    height: 3px;
+    right: 0;
+    left: 0;
+    background: #D9499A;
+    content: "";
+    margin-top: 50%;
+    height: 50%;
+    border-radius: 51%;
     pointer-events: none; }
   input[type="range"]::-webkit-slider-thumb {
     width: 0;
     height: 0;
     -webkit-appearance: none;
-    position: relative;
-    background: #e00; }
+    position: relative; }
 
 #how-much-value {
   width: 100%;
