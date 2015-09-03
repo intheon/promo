@@ -119,4 +119,51 @@ input[type="range"] {
   font-size: 2em;
   text-align: center; }
 
+#output-codes {
+  height: 600px;
+  overflow-y: scroll; }
+
+.code {
+  float: left;
+  padding: 2px;
+  margin-left: 6px; }
+
+.code:nth-child(even) {
+  background-color: #d8d8d8;
+  border-radius: 3px; }
+
+.options-button {
+  float: left;
+  width: 100%;
+  margin-bottom: 0.5%;
+  padding: 0.5%;
+  transition: all 1s; }
+
+.options-button img {
+  margin: 0;
+  padding: 0;
+  vertical-align: text-middle;
+  float: right; }
+
+.options-button p {
+  margin: 0;
+  padding: 0;
+  margin-top: 1.5%;
+  float: left;
+  vertical-align: text-middle; }
+
+.options-button:nth-child(odd) {
+  background-color: #d8d8d8;
+  border-radius: 3px; }
+
+.options-button:hover {
+  cursor: hand;
+  cursor: pointer;
+  color: #D9499A;
+  background-color: #fcf2f8; }
+
+.noFloat {
+  float: none !important;
+  width: 100%; }
+
 /*# sourceMappingURL=style.css.map */
