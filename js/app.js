@@ -47,7 +47,7 @@ function addOptions()
 	$("#output-options").html("");
 
 	// add buttons
-	$("#output-options").html("<div class='options-container'><div class='options-button' id='asClipboard'><img src='clip.png'><p>Copy to clipboard</p></div><div class='options-button' id='asColumn'><img src='column.png'><p>Show as Column</p></div><div class='options-button' id='asCsv'><img src='csv.png'><p>Download to CSV</p></div></div>");
+	$("#output-options").html("<div class='options-container'><div class='options-button' id='asSelected'><img src='clip.png'><p>Select All</p></div><div class='options-button' id='asColumn'><img src='column.png'><p>Show as Column</p></div><div class='options-button' id='asCsv'><img src='csv.png'><p>Download to CSV</p></div></div>");
 
 	// and listeners
 	$(".options-button").click(function(event){
@@ -59,10 +59,17 @@ function addOptions()
 
 function carryOutOptionLikeLoyalSlave(option)
 {
+	var delimiter = "&#10;";
+
 	switch (option)
 	{
 		case "asCsv":
-			console.log(option);
+			var arr = [];
+
+			var code = $(".code").each(function(){
+				arr.push($(this).text());
+			});
+			console.log(arr);
 			break;
 		case "asColumn":
 			var status = $("#output-codes .code").attr("class");
@@ -84,8 +91,25 @@ function carryOutOptionLikeLoyalSlave(option)
 			}
 
 			break;
-		case "asClipboard":
-			console.log(option);
+		case "asSelected":
+
+			var arr = [];
+
+			var code = $(".code").each(function(){
+				arr.push($(this).text());
+			});
+
+			$("#output-codes").html("<textarea id='selectOutput'></textarea>");
+
+			for (var i = 0; i < arr.length; i++)
+			{
+				$("#selectOutput").append(arr[i] + delimiter);
+			}
+
+			$("#selectOutput").each(function(){
+				$(this).select();
+			});
+
 			break;
 		default:
 			console.log("derp");
