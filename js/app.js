@@ -19,6 +19,49 @@ $("#how-much-value").html(rangeValue);
 		calcCodes(rangeValue);
 	})
 
+
+// responsive, change grid values in the html
+$(window).resize(function(){
+	var width = $(this).width();
+
+	if (width < 800)
+	{
+		$("#intro").removeClass();
+		$("#slider").removeClass();
+		$("#options-container").removeClass();
+		$("#options").removeClass();
+		$("#generate").removeClass();
+		$("#output").removeClass();
+		$("#download").removeClass();
+
+		$("#intro").addClass("column-12");
+		$("#slider").addClass("column-12");
+		$("#options-container").addClass("column-12");
+		$("#options").addClass("column-12");
+		$("#generate").addClass("column-12");
+		$("#output").addClass("column-12");
+		$("#download").addClass("column-12");
+	}
+	if (width > 800)
+	{
+		$("#intro").removeClass();
+		$("#slider").removeClass();
+		$("#options").removeClass();
+		$("#options-container").removeClass();
+		$("#generate").removeClass();
+		$("#output").removeClass();
+		$("#download").removeClass();
+
+		$("#intro").addClass("column-7");
+		$("#options-container").addClass("column-5");
+		$("#slider").addClass("column-12");
+		$("#options").addClass("column-6");
+		$("#generate").addClass("column-6");
+		$("#output").addClass("column-7");
+		$("#download").addClass("column-5");
+	}
+});
+
 });
 
 function calcCodes(howManyCodes)
