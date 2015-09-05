@@ -101,10 +101,14 @@ function carryOutOptionLikeLoyalSlave(option)
 
 			$("#output-codes").html("<textarea id='selectOutput'></textarea>");
 
+			var string = "";
+
 			for (var i = 0; i < arr.length; i++)
 			{
-				$("#selectOutput").append(arr[i] + delimiter);
+				string += arr[i] + delimiter;
 			}
+
+			$("#selectOutput").append(string);
 
 			$("#selectOutput").each(function(){
 				$(this).select();
