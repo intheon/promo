@@ -1,7 +1,10 @@
 $(document).ready(function(){
 
+// sod it, im making global because im hungry
+
 var rangeValue = $("#range-slider").val();
-$("#how-much-value").html(rangeValue)
+
+$("#how-much-value").html(rangeValue);
 
 	// show slider value in html view
 	$("#range-slider").on("input", function(){
@@ -59,6 +62,8 @@ function addOptions()
 
 function carryOutOptionLikeLoyalSlave(option)
 {
+	var arr = [];
+	var string = "";
 	var delimiter = "&#10;";
 
 	switch (option)
@@ -69,7 +74,17 @@ function carryOutOptionLikeLoyalSlave(option)
 			var code = $(".code").each(function(){
 				arr.push($(this).text());
 			});
-			console.log(arr);
+
+			// stolen from http://jsfiddle.net/nkm2b/222/
+			var csvString 		= arr.join("%0A");
+			var a         		= document.createElement('a');
+				a.href        	= 'data:attachment/csv,' + csvString;
+				a.target      	= '_blank';
+				a.download    	= 'myFile.csv';
+
+			document.body.appendChild(a);
+			a.click();
+
 			break;
 		case "asColumn":
 			var status = $("#output-codes .code").attr("class");
@@ -93,15 +108,11 @@ function carryOutOptionLikeLoyalSlave(option)
 			break;
 		case "asSelected":
 
-			var arr = [];
-
 			var code = $(".code").each(function(){
 				arr.push($(this).text());
 			});
 
 			$("#output-codes").html("<textarea id='selectOutput'></textarea>");
-
-			var string = "";
 
 			for (var i = 0; i < arr.length; i++)
 			{
@@ -113,6 +124,11 @@ function carryOutOptionLikeLoyalSlave(option)
 			$("#selectOutput").each(function(){
 				$(this).select();
 			});
+
+			$("#asSelected").off("click");
+			$("#asSelected").css("opacity","0.1");
+			$("#asColumn").off("click");
+			$("#asColumn").css("opacity","0.1");
 
 			break;
 		default:
